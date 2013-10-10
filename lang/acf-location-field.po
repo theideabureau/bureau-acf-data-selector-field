@@ -1,0 +1,75 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Text in echo
+#: location-field.php:264
+msgid ""
+msgstr ""
+
+#. Text in echo
+#: location-field.php:328
+msgid "Address: "
+msgstr ""
+
+#. Text in echo
+#: location-field.php:330
+msgid "Coordinates: "
+msgstr ""
+
+#. Text in echo
+#: location-field.php:328
+msgid "Find the complete address"
+msgstr ""
+
+#. Text in echo
+#: location-field.php:249
+msgid "Latitude and longitude to center the initial map."
+msgstr ""
+
+#. Text in echo
+#: location-field.php:228
+msgid "Map address"
+msgstr ""
+
+#. Text in echo
+#: location-field.php:248
+msgid "Map center"
+msgstr ""
+
+#. Text in echo
+#: location-field.php:263
+msgid "Map zoom"
+msgstr ""
+
+#. Text in function
+#: location-field.php:267
+msgid "No"
+msgstr ""
+
+#. Text in echo
+#: location-field.php:229
+msgid "Return the address along with the coordinates."
+msgstr ""
+
+#. Text in echo
+#: location-field.php:323
+msgid "This address couldn't be found: "
+msgstr ""
+
+#. Text in echo
+#: location-field.php:323
+msgid "This place couldn't be found: "
+msgstr ""
+
+#. Text in function
+#: location-field.php:267
+msgid "Yes"
+msgstr ""
+
+#. Text in function
+#: location-field.php:299
+msgid "Search for a location"
+msgstr ""
+

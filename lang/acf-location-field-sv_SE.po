@@ -1,0 +1,139 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: ACF Location Field 1.0.0\n"
+"POT-Creation-Date: 2013-07-18 18:24+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Mikael Jorhult <mikael@jorhult.se>\n"
+"Language-Team: Mikael Jorhult <mikael@jorhult.se>\n"
+"Language: Swedish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Poedit 1.5.7\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: location-v3.php:36
+msgid "Location"
+msgstr "Plats"
+
+#: location-v3.php:138
+msgid "Map address"
+msgstr "Kartadress"
+
+#: location-v3.php:139
+msgid "Return the address along with the coordinates."
+msgstr "Returnera adressen tillsammans med koordinaterna."
+
+#: location-v3.php:149 location-v3.php:199 location-v4.php:210
+#: location-v4.php:230 location-v4.php:250 location-v4.php:270
+msgid "Yes"
+msgstr "Ja"
+
+#: location-v3.php:150 location-v3.php:200 location-v4.php:211
+#: location-v4.php:231 location-v4.php:251 location-v4.php:271
+msgid "No"
+msgstr "Nej"
+
+#: location-v3.php:158 location-v4.php:169
+msgid "Map center"
+msgstr "Centrum"
+
+#: location-v3.php:159
+msgid "Latitude and longitude to center the initial map."
+msgstr "Latitud och longitud att centrera på initialt."
+
+#: location-v3.php:173 location-v4.php:184
+msgid "Map zoom"
+msgstr "Zoom"
+
+#: location-v3.php:188 location-v4.php:199
+msgid "Map Scrollwheel"
+msgstr "Scrollhjul"
+
+#: location-v3.php:189 location-v4.php:200
+msgid "Allows scrollwheel zooming on the map field"
+msgstr "Tillåt användaren zooma med musens scrollhjul."
+
+#: location-v3.php:274 location-v4.php:335
+msgid "This address could not be found: "
+msgstr "Denna adress kunde inte hittas: "
+
+#: location-v3.php:289 location-v4.php:350
+msgid "This place could not be found: "
+msgstr "Denna plats kan inte hittas: "
+
+#: location-v3.php:369 location-v4.php:445
+msgid "Search for a location"
+msgstr "Sök efter en plats"
+
+#: location-v3.php:371 location-v4.php:447
+msgid "Find the complete address"
+msgstr "Hitta den fullständiga adressen"
+
+#: location-v3.php:371 location-v4.php:447
+msgid "Address: "
+msgstr "Adress: "
+
+#: location-v3.php:373 location-v4.php:449
+msgid "Coordinates: "
+msgstr "Koordinater: "
+
+#: location-v4.php:23
+msgid "Location Map"
+msgstr "Plats (karta)"
+
+#: location-v4.php:24
+msgid "Content"
+msgstr "Innehåll"
+
+#: location-v4.php:129
+msgid "Return Value"
+msgstr "Returvärde"
+
+#: location-v4.php:139
+msgid "Coordinates & Address"
+msgstr "Koordinater och adress"
+
+#: location-v4.php:140
+msgid "Coordinates"
+msgstr "Koordinater"
+
+#: location-v4.php:149
+msgid "Map height"
+msgstr "Kartans höjd"
+
+#: location-v4.php:150
+msgid "Height of the map. Minimum height is 150px"
+msgstr "Höjden på kartan som visas. Måste vara minst 150px."
+
+#: location-v4.php:170
+msgid "Latitude and longitude to center the initial map"
+msgstr "Latitude och longitud där kartan centreras initialt"
+
+#: location-v4.php:219
+msgid "Map Type Control"
+msgstr "Kartväljare"
+
+#: location-v4.php:220
+msgid "Show controls for Map Type (Satellite, Hybrid)"
+msgstr "Visa kontroller för karttyp (satellit, hybrid)"
+
+#: location-v4.php:239
+msgid "Street View Control"
+msgstr "Street View-kontroller"
+
+#: location-v4.php:240
+msgid "Show controls for Street View"
+msgstr "Visa kontroller för Street View"
+
+#: location-v4.php:259
+msgid "Point Of Interest"
+msgstr "Intressepunkter"
+
+#: location-v4.php:260
+msgid "Show places on the map"
+msgstr "Visa platser på kartan"

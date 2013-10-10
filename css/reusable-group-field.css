@@ -1,0 +1,15 @@
+#acf_fields .fields .field_type-reusable-group tr.field_name,
+#acf_fields .fields .field_type-reusable-group tr.field_instructions,
+#acf_fields .fields .field_type-reusable-group tr.required {
+	display: none;
+}
+
+.field_type-reusable-group > p.label
+
+.acf_postbox .field .field {
+	padding: 15px 0;
+}
+
+* {
+	color: red !important;
+}
