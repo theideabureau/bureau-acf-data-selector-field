@@ -8,18 +8,13 @@ Adds a 'Data Selector' field type for the [Advanced Custom Fields](http://wordpr
 
 This add-on adds a Data Selector field type to the Advanced Custom Fields plugin for version 4 and up. This field allows you to select data from customisable data sources using the relationship format.
 
-Data sources can be registered in the following format:
+Data sources can be registered using one of the following formats:
 
 ```
 add_action('acf_data_selector/data', function($data) {
 
 	// get theme directory path
 	$theme_dir = get_theme_root() . '/' . get_template();
-
-	$data['countries'] = array(
-		'label' => 'Countries',
-		'data' => json_decode(file_get_contents($theme_dir . '/data/countries.json'), TRUE)
-	);
 
 	// basic array
 	$data['countries'] = array(
@@ -62,6 +57,10 @@ add_action('acf_data_selector/data', function($data) {
 
 });
 ```
+
+When using the basic array format the array value is used as the field label. However when using the complex array format be sure to set a `label` item.
+
+When using the complex array format, calling `get_field()` will return the entire array for any given key, this means that *any* additional data we add into the array (room_number and floor in the example above) will be returned.
 
 ### Compatibility
 
