@@ -21,6 +21,43 @@ add_action('acf_data_selector/data', function($data) {
 		'data' => json_decode(file_get_contents($theme_dir . '/data/countries.json'), TRUE)
 	);
 
+	// basic array
+	$data['countries'] = array(
+		'label' => 'Countries',
+		'data' => array(
+			'US' => 'United States',
+			'UK' => 'United Kingdom'
+		)
+	);
+
+	// complex array
+	$data['rooms'] = array(
+		'label' => 'Rooms',
+		'data' => array(
+			'101' => array(
+				'label' => 'Meeting Room',
+				'room_number' => '101',
+				'floor' => '1'
+			),
+			'102' => array(
+				'label' => 'Stock Room',
+				'room_number' => '102',
+				'floor' => '1'
+			),
+			'202' => array(
+				'label' => 'Manager Room 1',
+				'room_number' => '202',
+				'floor' => '2'
+			),
+		)
+	);
+
+	// json array
+	$data['regions'] = array(
+		'label' => 'Regions',
+		'data' => json_decode(file_get_contents('/data/regions.json'), TRUE)
+	);
+
 	return $data;
 
 });
