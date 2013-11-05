@@ -1,12 +1,12 @@
 <?php
 
 /*
-Plugin Name: Advanced Custom Fields: Reusable Group Field
-Plugin URI: https://github.com/elliotcondon/acf-location-field
-Description: Adds a Location field to Advanced Custom Fields. This field allows you to find addresses and coordinates of a desired location.
-Version: 1.0.0
-Author: Elliot Condon
-Author URI: http://advancedcustomfields.com/
+Plugin Name: Advanced Custom Fields: Data Selector Field
+Plugin URI: https://github.com/theideabureau/acf-data-selector-field
+Description: Adds a custom data selector field to Advanced Custom Fields. Allows for custom data sets to be used within the relationship field.
+Version: 1.1.0
+Author: Ben Everard
+Author URI: http://beneverard.co.uk/
 License: GPL
 */
 
