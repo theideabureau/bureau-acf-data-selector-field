@@ -123,6 +123,8 @@ class acf_field_country extends acf_field
 		// get the data from that data source		
 		$data = $data_sources[$_POST['data_source']]['data'];
 
+		// clean-up data array
+		$data = $this->cleanup_array($data);
 
 		// filter data by search
 		if ( $_POST['s'] ) {
@@ -383,6 +385,9 @@ class acf_field_country extends acf_field
 		// get the data from that data source		
 		$data = $data_sources[$field['data_source']]['data'];
 
+		// clean-up data array
+		$data = $this->cleanup_array($data);
+
 		$values = array();
 
 		foreach ( $value as $data_key ) {
@@ -431,7 +436,7 @@ class acf_field_country extends acf_field
 		$values = array();
 
 		foreach ( $value as $data_key ) {
-			$values[$data_key] = $data[$data_key]['label'];
+			$values[$data_key] = $data[$data_key];
 		}
 
 		// return value
@@ -457,6 +462,31 @@ class acf_field_country extends acf_field
 	
 	function update_value( $value, $post_id, $field ) {
 		return $value;
+	}
+	
+	/*
+	*  cleanup_array()
+	*
+	*  Takes custom data and makes sure it has a label set
+	*
+	*  @param	$data - the data set values
+	*
+	*  @return	$value - the modified value
+	*/
+
+	function cleanup_array($data) {
+
+		foreach ( $data as $key => $value ) {
+
+			// if the data item is not an array, use the value as the array label
+			if ( ! is_array($value) ) {
+				$data[$key] = array('label' => $value);
+			}
+
+		}
+
+		return $data;
+
 	}
 	
 }
