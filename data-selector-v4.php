@@ -299,6 +299,11 @@ class acf_field_country extends acf_field
 			$data_options[$data_souce_key] = $data_source['label'];
 		}
 
+		// if the data_source value isn't set, set it as null
+		if ( ! isset($field['data_source']) ) {
+			$field['data_source'] = NULL;
+		}
+
 		?>
 
 			<tr class="field_option field_option_<?php echo $this->name; ?>">
