@@ -311,16 +311,26 @@ class acf_field_country extends acf_field
 					<label><?php _e("Data Set",'acf'); ?></label>
 				</td>
 				<td>
-					<?php
-					
-						do_action('acf/create_field', array(
-							'type'	=>	'select',
-							'name'	=>	'fields[' . $key . '][data_source]',
-							'value'	=>	$field['data_source'],
-							'choices' => $data_options
-						));
 
-					?>
+					<?php if ( ! empty($data_options) ) : ?>
+
+						<?php
+
+							do_action('acf/create_field', array(
+								'type'	=>	'select',
+								'name'	=>	'fields[' . $key . '][data_source]',
+								'value'	=>	$field['data_source'],
+								'choices' => $data_options
+							));
+
+						?>
+
+					<?php else : ?>
+
+						<strong>No data sets available</strong>
+
+					<?php endif; ?>
+
 				</td>
 			</tr>
 
