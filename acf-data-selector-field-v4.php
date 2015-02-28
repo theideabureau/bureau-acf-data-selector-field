@@ -1,6 +1,6 @@
 <?php
 
-class acf_field_country extends acf_field
+class acf_field_data_selector extends acf_field
 {
 	/*
 	*  __construct
@@ -506,6 +506,6 @@ class acf_field_country extends acf_field
 	
 }
 
-new acf_field_country();
+new acf_field_data_selector();
 
 ?>
