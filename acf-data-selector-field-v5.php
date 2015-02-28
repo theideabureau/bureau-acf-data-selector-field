@@ -195,7 +195,7 @@ class acf_field_data_selector extends acf_field {
 							<input type="hidden" name="<?php echo $field['name']; ?>[]" value="<?php echo $id; ?>" />
 							
 							<span data-id="<?php echo $id; ?>" class="acf-rel-item">
-								<?php echo $data[$id]['label']; ?>aa
+								<?php echo $data[$id]['label']; ?>
 								<a href="#" class="acf-icon small dark" data-name="remove_item"><i class="acf-sprite-remove"></i></a>
 							</span>
 
