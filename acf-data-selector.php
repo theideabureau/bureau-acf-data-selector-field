@@ -11,42 +11,33 @@ License: GPL
 */
 
 
-class acf_field_data_selector_plugin
-{
-	/*
-	*  Construct
-	*
-	*  @description: 
-	*  @since: 3.6
-	*  @created: 1/04/13
-	*/
-	
-	function __construct()
-	{
-		// set text domain
-		$domain = 'acf-data-selector-field';
-		$mofile = trailingslashit(dirname(__File__)) . 'lang/' . $domain . '-' . get_locale() . '.mo';
-		load_textdomain( $domain, $mofile );
-		
-		// version 4+
-		add_action('acf/register_fields', array($this, 'register_fields'));	
 
-	}
-	
+// 1. set text domain
+// Reference: https://codex.wordpress.org/Function_Reference/load_plugin_textdomain
+load_plugin_textdomain( 'acf-data-selector-field', false, dirname( plugin_basename(__FILE__) ) . '/lang/' ); 
 
-	/*
-	*  register_fields
-	*
-	*  @description: 
-	*  @since: 3.6
-	*  @created: 1/04/13
-	*/
+
+
+
+// 2. Include field type for ACF5
+// $version = 5 and can be ignored until ACF6 exists
+function include_field_types_data_selector-field( $version ) {
 	
-	function register_fields()
-	{
-		include_once('data-selector-v4.php');
-	}
+	include_once('acf-data-selector-field-v5.php');
 	
 }
 
-new acf_field_data_selector_plugin();
+add_action('acf/include_field_types', 'include_field_types_data_selector-field');	
+
+
+
+
+// 3. Include field type for ACF4
+function register_fields_data-selector_field() {
+	
+	include_once('acf-data-selector-field-v4.php');
+	
+}
+
+add_action('acf/register_fields', 'register_fields_data-selector_field');	
+
