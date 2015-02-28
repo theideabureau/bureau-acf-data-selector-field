@@ -13,9 +13,6 @@ Data sources can be registered using one of the following formats:
 ```
 add_action('acf_data_selector/data', function($data) {
 
-	// get theme directory path
-	$theme_dir = get_theme_root() . '/' . get_template();
-
 	// basic array
 	$data['countries'] = array(
 		'label' => 'Countries',
@@ -66,7 +63,7 @@ When using the complex array format, calling `get_field()` will return the entir
 
 This add-on will work with:
 
-* version 4 and up
+* Versions 4 and 5
 
 
 ### Installation
@@ -87,7 +84,3 @@ This add-on can be treated as both a WP plugin and a theme include.
 include_once('acf-data-selector/acf-data-selector.php');
 
 ```
-
-### More Information
-
-Please read the readme.txt file for more information
