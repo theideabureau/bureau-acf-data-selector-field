@@ -4,7 +4,7 @@
 Plugin Name: Advanced Custom Fields: Data Selector Field
 Plugin URI: https://github.com/theideabureau/acf-data-selector-field
 Description: Adds a custom data selector field to Advanced Custom Fields. Allows for custom data sets to be used within the relationship field.
-Version: 1.1.0
+Version: 2.0.0
 Author: Ben Everard
 Author URI: http://beneverard.co.uk/
 License: GPL
