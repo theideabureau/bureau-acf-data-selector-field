@@ -1,0 +1,125 @@
+
+/*--------------------------------------------------------------------------
+*
+*	Relationship
+*	
+*-------------------------------------------------------------------------*/
+.acf-data_selector .filters {
+  border: #DFDFDF solid 1px;
+  background: #fff;
+}
+.acf-data_selector .filters li input,
+.acf-data_selector .filters li select {
+  height: 28px;
+  line-height: 28px;
+  padding: 2px;
+}
+.acf-data_selector .filters li input {
+  border-color: transparent;
+  box-shadow: none;
+}
+.acf-data_selector .filters li .inner {
+  padding: 7px 7px 7px 0;
+  margin: 0;
+}
+.acf-data_selector .filters li:first-child .inner {
+  padding-left: 5px;
+}
+.acf-data_selector .filters .filter {
+  margin: 0;
+  float: none;
+}
+.acf-data_selector .filters .filter:focus,
+.acf-data_selector .filters .filter:active {
+  outline: none;
+  box-shadow: none;
+}
+.acf-data_selector .selection {
+  border: #DFDFDF solid 1px;
+  position: relative;
+  margin-top: -1px;
+}
+.acf-data_selector .values,
+.acf-data_selector .choices {
+  width: 50%;
+  background: #fff;
+  float: left;
+}
+.acf-data_selector .choices {
+  background: #F9F9F9;
+}
+.acf-data_selector .choices .list {
+  border-right: #DFDFDF solid 1px;
+}
+.acf-data_selector .list {
+  margin: 0;
+  padding: 5px;
+  height: 160px;
+  overflow: auto;
+}
+.acf-data_selector .list .acf-rel-label,
+.acf-data_selector .list .acf-rel-item,
+.acf-data_selector .list p {
+  padding: 5px 7px;
+  margin: 0;
+  display: block;
+  position: relative;
+  min-height: 18px;
+}
+.acf-data_selector .list ul {
+  padding-bottom: 5px;
+}
+.acf-data_selector .list ul .acf-rel-item {
+  padding-left: 20px;
+}
+.acf-data_selector .list .acf-rel-label {
+  font-weight: bold;
+}
+.acf-data_selector .list .acf-rel-item {
+  color: #333;
+  cursor: pointer;
+}
+.acf-data_selector .values .list .acf-rel-item {
+  cursor: move;
+}
+.acf-data_selector .acf-rel-item b {
+  text-decoration: underline;
+  font-weight: normal;
+}
+.acf-data_selector .values .acf-rel-item b {
+  text-decoration: none;
+}
+.acf-data_selector .acf-rel-item .thumbnail {
+  background: #DFDFDF;
+  width: 17px;
+  height: 17px;
+  float: left;
+  margin: 0 5px 0 0;
+}
+.acf-data_selector .acf-rel-item .thumbnail img {
+  width: 17px;
+  height: 17px;
+}
+.acf-data_selector .acf-rel-item:hover {
+  background: #3875D7;
+  color: #fff;
+}
+.acf-data_selector .values .acf-icon {
+  position: absolute;
+  top: 4px;
+  right: 7px;
+  display: none;
+}
+.acf-data_selector .values .acf-rel-item:hover .acf-icon {
+  display: block;
+}
+/* disabled */
+.acf-data_selector .acf-rel-item.disabled {
+  opacity: 0.5;
+}
+.acf-data_selector .acf-rel-item.disabled:hover {
+  opacity: 0.5;
+  background: transparent;
+  color: #333;
+  cursor: default;
+}
