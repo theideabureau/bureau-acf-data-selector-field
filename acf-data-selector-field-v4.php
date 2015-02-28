@@ -67,8 +67,8 @@ class acf_field_data_selector extends acf_field
 
 
 		// register acf scripts
-		wp_register_script('acf-input-data_selector', $this->settings['dir'] . 'js/input.js', array('acf-input'), $this->settings['version']);
-		wp_register_style('acf-input-data_selector', $this->settings['dir'] . 'css/input.css', array('acf-input'), $this->settings['version']);
+		wp_register_script('acf-input-data_selector', $this->settings['dir'] . 'assets/v4/js/input.js', array('acf-input'), $this->settings['version']);
+		wp_register_style('acf-input-data_selector', $this->settings['dir'] . 'assets/v4/css/input.css', array('acf-input'), $this->settings['version']);
 
 
 		// scripts
