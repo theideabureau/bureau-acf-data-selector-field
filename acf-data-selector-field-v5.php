@@ -477,9 +477,8 @@ class acf_field_data_selector extends acf_field {
 		// get data sources
 		$data_sources = apply_filters('acf_data_selector/data', array());
 
-		// get the data from that data source		
-		$data = $data_sources['regions']['data'];
-		// $data = $data_sources['$_POST['data_source']']['data'];
+		// get the data from that data source
+		$data = $data_sources[$_POST['source']]['data'];
 
 		// clean-up data array
 		$data = $this->cleanup_array($data);
