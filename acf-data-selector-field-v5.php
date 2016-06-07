@@ -1,8 +1,8 @@
 <?php
 
 class acf_field_data_selector extends acf_field {
-	
-	
+
+
 	/*
 	*  __construct
 	*
@@ -15,16 +15,16 @@ class acf_field_data_selector extends acf_field {
 	*  @param	n/a
 	*  @return	n/a
 	*/
-	
+
 	function __construct() {
-		
+
 		$this->name = 'data_selector';
 		$this->label = __('Data Selector', 'acf-data_selector');
 		$this->category = 'Data Selector';
 		$this->defaults = array(
 			'max'	=> '',
 		);
-	
+
 		$this->l10n = array(
 			'max'		=> __("Maximum values reached ( {max} values )",'acf'),
 			'tmpl_li'	=> '
@@ -34,17 +34,17 @@ class acf_field_data_selector extends acf_field {
 							</li>
 							'
 		);
-		
+
 		// get data
 		add_action('wp_ajax_acf/fields/data_selector/get_data', array($this, 'get_data'), 99);
 		add_action('wp_ajax_nopriv_acf/fields/data_selector/get_data', array($this, 'get_data'), 99);
 
 		// do not delete!
     	parent::__construct();
-    	
+
 	}
-	
-	
+
+
 	/*
 	*  render_field_settings()
 	*
@@ -57,9 +57,9 @@ class acf_field_data_selector extends acf_field {
 	*  @param	$field (array) the $field being edited
 	*  @return	n/a
 	*/
-	
+
 	function render_field_settings( $field ) {
-		
+
 		// vars
 		$key = $field['name'];
 
@@ -85,7 +85,7 @@ class acf_field_data_selector extends acf_field {
 			'name'			=> 'data_source',
 			'choices'		=> $data_options
 		));
-		
+
 		acf_render_field_setting( $field, array(
 			'label'			=> __('Maximum choices', 'acf-data_selector'),
 			'instructions'	=> __('Define the maximum number of choices the user can select','acf-data_selector'),
@@ -94,9 +94,9 @@ class acf_field_data_selector extends acf_field {
 		));
 
 	}
-	
-	
-	
+
+
+
 
 	/*
 	*  render_field()
@@ -109,9 +109,9 @@ class acf_field_data_selector extends acf_field {
 	*  @since	3.6
 	*  @date	23/01/13
 	*/
-	
+
 	function render_field( $field ) {
-		
+
 		// vars
 		$values = array();
 
@@ -127,40 +127,41 @@ class acf_field_data_selector extends acf_field {
 			'data-s'			=> '',
 			'data-paged'		=> 1,
 			'field_key'			=> $field['key'],
-			'data_source'		=> $field['data_source']
+			'data-source'		=> $field['data_source'],
+			// 'data-data_source'		=> $field['data_source']
 		);
 
 		// get data sources
 		$data_sources = apply_filters('acf_data_selector/data', array());
 
-		// get the data from that data source		
+		// get the data from that data source
 		$data = $data_sources[$field['data_source']]['data'];
 
 		// clean-up data array
 		$data = $this->cleanup_array($data);
-		
+
 		// Lang
 		if ( defined('ICL_LANGUAGE_CODE') ) {
 			$atts['data-lang'] = ICL_LANGUAGE_CODE;
 		}
-		
+
 		// width for select filters
 		$width = array(
 			'search'	=> 100
 		);
-			
+
 		?>
 <div <?php acf_esc_attr_e($atts); ?>>
-	
+
 	<div class="acf-hidden">
 		<input type="hidden" name="<?php echo $field['name']; ?>" value="" />
 	</div>
-	
+
 	<?php if( $width['search'] > 0 ): ?>
 	<div class="filters">
-		
+
 		<ul class="acf-hl">
-		
+
 			<?php if( $width['search'] > 0 ): ?>
 			<li style="width:<?php echo $width['search']; ?>%;">
 				<div class="inner">
@@ -168,32 +169,32 @@ class acf_field_data_selector extends acf_field {
 				</div>
 			</li>
 			<?php endif; ?>
-			
+
 		</ul>
-		
+
 	</div>
 	<?php endif; ?>
-	
+
 	<div class="selection acf-cf">
-	
+
 		<div class="choices">
-		
+
 			<ul class="acf-bl list"></ul>
-			
+
 		</div>
-		
+
 		<div class="values">
-		
+
 			<ul class="acf-bl list">
-			
+
 				<?php if ( $field['value'] ) : ?>
 
 					<?php foreach ( $field['value'] as $id ) : ?>
-						
+
 						<li>
-							
+
 							<input type="hidden" name="<?php echo $field['name']; ?>[]" value="<?php echo $id; ?>" />
-							
+
 							<span data-id="<?php echo $id; ?>" class="acf-rel-item">
 								<?php echo $data[$id]['label']; ?>
 								<a href="#" class="acf-icon small dark" data-name="remove_item"><i class="acf-sprite-remove"></i></a>
@@ -204,19 +205,19 @@ class acf_field_data_selector extends acf_field {
 					<?php endforeach; ?>
 
 				<?php endif; ?>
-				
+
 			</ul>
-			
+
 		</div>
-		
+
 	</div>
-	
+
 </div>
 		<?php
 	}
-	
-	
-		
+
+
+
 	/*
 	*  input_admin_enqueue_scripts()
 	*
@@ -232,18 +233,18 @@ class acf_field_data_selector extends acf_field {
 	*/
 
 	function input_admin_enqueue_scripts() {
-		
+
 		$dir = plugin_dir_url( __FILE__ );
-		
+
 		wp_register_script('acf-input-data_selector', $dir . 'assets/v5/js/input.js');
 		wp_enqueue_script('acf-input-data_selector');
 
 		wp_register_style('acf-input-data_selector', $dir . 'assets/v5/css/input.css');
 		wp_enqueue_style('acf-input-data_selector');
-		
+
 	}
-	
-	
+
+
 	/*
 	*  input_admin_head()
 	*
@@ -259,21 +260,21 @@ class acf_field_data_selector extends acf_field {
 	*/
 
 	/*
-		
+
 	function input_admin_head() {
-	
-		
-		
+
+
+
 	}
-	
+
 	*/
-	
-	
+
+
 	/*
    	*  input_form_data()
    	*
    	*  This function is called once on the 'input' page between the head and footer
-   	*  There are 2 situations where ACF did not load during the 'acf/input_admin_enqueue_scripts' and 
+   	*  There are 2 situations where ACF did not load during the 'acf/input_admin_enqueue_scripts' and
    	*  'acf/input_admin_head' actions because ACF did not know it was going to be used. These situations are
    	*  seen on comments / user edit forms on the front end. This function will always be called, and includes
    	*  $args that related to the current screen such as $args['post_id']
@@ -285,18 +286,18 @@ class acf_field_data_selector extends acf_field {
    	*  @param	$args (array)
    	*  @return	n/a
    	*/
-   	
+
    	/*
-   	
+
    	function input_form_data( $args ) {
-	   	
-		
-	
+
+
+
    	}
-   	
+
    	*/
-	
-	
+
+
 	/*
 	*  input_admin_footer()
 	*
@@ -312,16 +313,16 @@ class acf_field_data_selector extends acf_field {
 	*/
 
 	/*
-		
+
 	function input_admin_footer() {
-	
-		
-		
+
+
+
 	}
-	
+
 	*/
-	
-	
+
+
 	/*
 	*  field_group_admin_enqueue_scripts()
 	*
@@ -337,14 +338,14 @@ class acf_field_data_selector extends acf_field {
 	*/
 
 	/*
-	
+
 	function field_group_admin_enqueue_scripts() {
-		
+
 	}
-	
+
 	*/
 
-	
+
 	/*
 	*  field_group_admin_head()
 	*
@@ -360,11 +361,11 @@ class acf_field_data_selector extends acf_field {
 	*/
 
 	/*
-	
+
 	function field_group_admin_head() {
-	
+
 	}
-	
+
 	*/
 
 
@@ -382,18 +383,18 @@ class acf_field_data_selector extends acf_field {
 	*  @param	$field (array) the field array holding all the field options
 	*  @return	$value
 	*/
-	
+
 	/*
-	
+
 	function load_value( $value, $post_id, $field ) {
-		
+
 		return $value;
-		
+
 	}
-	
+
 	*/
-	
-	
+
+
 	/*
 	*  update_value()
 	*
@@ -408,12 +409,12 @@ class acf_field_data_selector extends acf_field {
 	*  @param	$field (array) the field array holding all the field options
 	*  @return	$value
 	*/
-	
+
 	function update_value( $value, $post_id, $field ) {
 		return $value;
 	}
-	
-	
+
+
 	/*
 	*  format_value()
 	*
@@ -429,31 +430,31 @@ class acf_field_data_selector extends acf_field {
 	*
 	*  @return	$value (mixed) the modified value
 	*/
-		
+
 	function format_value( $value, $post_id, $field ) {
-	
+
 		// empty?
 		if ( ! $value ) {
 			return $value;
 		}
-		
-		
+
+
 		// Pre 3.3.3, the value is a string coma seperated
 		if ( is_string($value) ) {
 			$value = explode(',', $value);
 		}
-		
-		
+
+
 		// empty?
 		if( ! is_array($value) || empty($value) ) {
 			return $value;
 		}
-	
-		
+
+
 		// get data sources
 		$data_sources = apply_filters('acf_data_selector/data', array());
 
-		// get the data from that data source		
+		// get the data from that data source
 		$data = $data_sources[$field['data_source']]['data'];
 
 		// clean-up data array
@@ -466,7 +467,7 @@ class acf_field_data_selector extends acf_field {
 		}
 
 		// return value
-		return $values;	
+		return $values;
 
 	}
 
@@ -482,7 +483,7 @@ class acf_field_data_selector extends acf_field {
 
 		// clean-up data array
 		$data = $this->cleanup_array($data);
-// print_r($data);
+	
 		// filter data by search
 		if ( $_POST['s'] ) {
 
@@ -495,12 +496,12 @@ class acf_field_data_selector extends acf_field {
 			}
 
 		}
-		
+
 		$r = array();
 
 		// loop
 		foreach ( $data as $key => $value ) {
-			
+
 			// update html
 			$r[] = array(
 				'id' => $key,
@@ -508,12 +509,12 @@ class acf_field_data_selector extends acf_field {
 			);
 
 		}
-			
+
 		// return JSON
 		echo json_encode( $r );
-		
+
 		die();
-			
+
 	}
 
 	/*
@@ -540,8 +541,8 @@ class acf_field_data_selector extends acf_field {
 		return $data;
 
 	}
-	
-	
+
+
 }
 
 
